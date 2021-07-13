@@ -5,19 +5,19 @@ const result = document.getElementById("results");
 const visual = document.getElementById("visual");
 const score = document.getElementById("score");
 
-let array = ["rock", "paper", "scissor"];
+let listOfWeapons = ["rock", "paper", "scissor"];
 let player, computer, outcome;
 let win = 0;
 let lose = 0;
 let draw = 0;
 
 pickRock.addEventListener("click", () => {
-  player = array[0];
-  computer = array[Math.floor(Math.random() * 3)];
+  player = listOfWeapons[0];
+  computer = listOfWeapons[Math.floor(Math.random() * listOfWeapons.length)];
 
-  if (computer == array[0]) {
+  if (computer === listOfWeapons[0]) {
     outcome = "got a Draw";
-  } else if (computer == array[1]) {
+  } else if (computer == listOfWeapons[1]) {
     outcome = "Lose!";
   } else {
     outcome = "Win!";
@@ -27,12 +27,12 @@ pickRock.addEventListener("click", () => {
 });
 
 pickPaper.addEventListener("click", () => {
-  player = array[1];
-  computer = array[Math.floor(Math.random() * 3)];
+  player = listOfWeapons[1];
+  computer = listOfWeapons[Math.floor(Math.random() * listOfWeapons.length)];
 
-  if (computer == array[0]) {
+  if (computer === listOfWeapons[0]) {
     outcome = "Win!";
-  } else if (computer == array[1]) {
+  } else if (computer == listOfWeapons[1]) {
     outcome = "got a Draw";
   } else {
     outcome = "Lose!";
@@ -42,12 +42,12 @@ pickPaper.addEventListener("click", () => {
 });
 
 pickScissor.addEventListener("click", () => {
-  player = array[2];
-  computer = array[Math.floor(Math.random() * 3)];
+  player = listOfWeapons[2];
+  computer = listOfWeapons[Math.floor(Math.random() * listOfWeapons.length)];
 
-  if (computer == array[0]) {
+  if (computer === listOfWeapons[0]) {
     outcome = "Lose!";
-  } else if (computer == array[1]) {
+  } else if (computer === listOfWeapons[1]) {
     outcome = "Win!";
   } else {
     outcome = "got a Draw";
