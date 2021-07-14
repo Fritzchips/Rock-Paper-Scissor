@@ -8,6 +8,10 @@ Try it out [here](https://fritzchips.github.io/Rock-Paper-Scissor/)
 
 ## Instructions
 
+Pick Rock, Paper or Scissors
+
+The computer will pick one of the three as well.
+
 ## Summary
 
 ## Author
