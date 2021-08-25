@@ -9,8 +9,8 @@ h1 {
   font-size: 40px;
 }
 img {
-  max-width: 250px;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 50%;
 }
 img:hover {
@@ -22,7 +22,8 @@ img:hover {
   border-radius: 10px;
   background-color: #acd8e3;
   padding: 25px;
-  max-width: 900px;
+  width: 80vw;
+  max-width: 400px;
   height: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,8 +53,18 @@ img:hover {
   justify-content: space-evenly;
 }
 
+@media screen and (max-width: 320px) {
+  #tBox {
+    grid-area: e;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
 #score {
   grid-area: a;
-  font-size: 30px;
+  font-size: 20px;
   justify-self: left;
 }

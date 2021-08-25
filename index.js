@@ -1,69 +1,55 @@
-const pickRock = document.getElementById("rBox");
-const pickPaper = document.getElementById("pBox");
-const pickScissor = document.getElementById("sBox");
 const result = document.getElementById("results");
 const visual = document.getElementById("visual");
 const score = document.getElementById("score");
 
-let listOfWeapons = ["rock", "paper", "scissor"];
-let player, computer, outcome;
+let computer, outcome;
 let win = 0;
 let lose = 0;
 let draw = 0;
 
-pickRock.addEventListener("click", () => {
-  player = listOfWeapons[0];
-  computer = listOfWeapons[Math.floor(Math.random() * listOfWeapons.length)];
+const gameImages = document.querySelectorAll("img");
+for (gameImage of gameImages) {
+  gameImage.addEventListener("click", (e) => determineWinnner(e.target.alt));
+}
 
-  if (computer === listOfWeapons[0]) {
-    outcome = "got a Draw";
-  } else if (computer == listOfWeapons[1]) {
-    outcome = "Lose!";
-  } else {
-    outcome = "Win!";
+const computerChoice = () => {
+  const array = ["rock", "paper", "scissor"];
+  return array[Math.floor(Math.random() * array.length)];
+};
+
+const determineWinnner = (player) => {
+  computer = computerChoice();
+
+  if (player === computer) outcome = "got a Draw";
+  switch (player) {
+    case "rock":
+      if (computer === "paper") outcome = "Lose!";
+      if (computer === "scissor") outcome = "Win!";
+      break;
+    case "paper":
+      if (computer === "rock") outcome = "Win!";
+      if (computer === "scissor") outcome = "Lose!";
+      break;
+    case "scissor":
+      if (computer === "rock") outcome = "Lose!";
+      if (computer === "paper") outcome = "Win!";
+      break;
+
+    default:
+      break;
   }
 
-  judge();
-});
+  judge(player);
+};
 
-pickPaper.addEventListener("click", () => {
-  player = listOfWeapons[1];
-  computer = listOfWeapons[Math.floor(Math.random() * listOfWeapons.length)];
-
-  if (computer === listOfWeapons[0]) {
-    outcome = "Win!";
-  } else if (computer == listOfWeapons[1]) {
-    outcome = "got a Draw";
-  } else {
-    outcome = "Lose!";
-  }
-
-  judge();
-});
-
-pickScissor.addEventListener("click", () => {
-  player = listOfWeapons[2];
-  computer = listOfWeapons[Math.floor(Math.random() * listOfWeapons.length)];
-
-  if (computer === listOfWeapons[0]) {
-    outcome = "Lose!";
-  } else if (computer === listOfWeapons[1]) {
-    outcome = "Win!";
-  } else {
-    outcome = "got a Draw";
-  }
-
-  judge();
-});
-
-function judge() {
-  if (outcome == "Win!") {
+function judge(player) {
+  if (outcome === "Win!") {
     visual.style.color = "green";
     win++;
-  } else if (outcome == "Lose!") {
+  } else if (outcome === "Lose!") {
     visual.style.color = "red";
     lose++;
-  } else if (outcome == "got a Draw") {
+  } else if (outcome === "got a Draw") {
     visual.style.color = "blue";
     draw++;
   }
