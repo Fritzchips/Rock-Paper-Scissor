@@ -65,10 +65,12 @@ img:hover {
 }
 
 @media screen and (max-width: 480px) {
+  #container {
+    padding: 10px;
+  }
+
   #tBox {
     font-size: 10px;
-    max-width: 320px;
-    padding: 10px;
   }
   #score {
     font-size: 15px;
