@@ -36,18 +36,22 @@ img:hover {
 
 #rBox {
   width: 100px;
+  height: 100px;
 }
 
 #pBox {
   width: 100px;
+  height: 100px;
 }
 
 #sBox {
   width: 100px;
+  height: 100px;
 }
 
 #tBox {
   width: 100px;
+  height: 100px;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -56,12 +60,14 @@ img:hover {
 
 #score {
   width: 100px;
+  height: 100px;
   font-size: 20px;
   justify-self: left;
 }
 
 #space {
   width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 480px) {
