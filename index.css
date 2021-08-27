@@ -9,8 +9,8 @@ h1 {
   font-size: 40px;
 }
 img {
-  max-width: 80%;
-  max-height: 80%;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 img:hover {
@@ -25,28 +25,29 @@ img:hover {
   width: 80vw;
   max-width: 400px;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas:
-    " a b c "
-    " d e f ";
+  display: flex;
+  flex-direction: column;
+}
+
+.container-sections {
+  display: flex;
+  justify-content: space-around;
 }
 
 #rBox {
-  grid-area: b;
+  width: 100px;
 }
 
 #pBox {
-  grid-area: d;
+  width: 100px;
 }
 
 #sBox {
-  grid-area: f;
+  width: 100px;
 }
 
 #tBox {
-  grid-area: e;
+  width: 100px;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -54,9 +55,13 @@ img:hover {
 }
 
 #score {
-  grid-area: a;
+  width: 100px;
   font-size: 20px;
   justify-self: left;
+}
+
+#space {
+  width: 100px;
 }
 
 @media screen and (max-width: 480px) {
@@ -74,6 +79,10 @@ img:hover {
   }
   p {
     font-size: 10px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
   }
 
   h2 {
